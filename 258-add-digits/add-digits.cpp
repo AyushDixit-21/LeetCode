@@ -6,12 +6,12 @@ public:
         if(num/10 == 0){
             return num;
         }
-        else{
-            while(num >0){
+        
+        while(num >0){
                 sum = sum + num%10;
                 num = num/10;
-            }
         }
+        
         return addDigits(sum);
     }
 };

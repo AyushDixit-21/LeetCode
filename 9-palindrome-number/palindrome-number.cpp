@@ -16,9 +16,6 @@ public:
             if(newnumber == revno){
                 return true;
             }
-            else{
-                return false;
-            }
         }
         return false;
        

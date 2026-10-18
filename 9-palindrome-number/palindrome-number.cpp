@@ -1,13 +1,14 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        int newnumber = x ;
+        int newnumber = x , lastdigit;
         long long revno=0;
         if(x < 0){
             return false;
         }
         while(x!=0){
-            revno = (revno*10) + (x%10);
+            lastdigit = x%10;
+            revno = (revno*10) + lastdigit;
             x = x/10;
         }
 

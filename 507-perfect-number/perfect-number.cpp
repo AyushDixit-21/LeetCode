@@ -10,6 +10,8 @@ public:
         if(sum == num){
             return true;
         }
-        return false;
+        else{
+            return false;
+        }
     }
 };

@@ -3,22 +3,26 @@ public:
     vector<int> sortedSquares(vector<int>& nums) {
 
         int n = nums.size();
-        vector<int>sqarr(n);
 
-        for(int i = 0;i<n;i++){
-            sqarr[i]=nums[i]*nums[i];
+        for(int i = 0;i<=n-1;i++){
+            nums[i] = nums[i]*nums[i];
         }
-        for(int i=0;i<=n-1;i++){
-            int j = i;
-            while(j>0 && sqarr[j-1]>sqarr[j]){
-                int temp = sqarr[j-1];
-                sqarr[j-1] = sqarr[j];
-                sqarr[j] = temp;
-                j--;
+
+        for(int i =n-1;i>=1;i--){
+            int didswap=0;
+            for(int j=0;j<i;j++){
+                if(nums[j]>nums[j+1]){
+                    swap(nums[j+1],nums[j]);
+                    didswap = 1;
+                }
             }
+            if(didswap == 0) break;
         }
-        return sqarr;
+
+        return nums;
+
         
-            
+
+        
     }
 };
